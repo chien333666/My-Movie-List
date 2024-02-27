@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Bootstrap的CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- FontAwesome的CSS -->
+  <script src="https://kit.fontawesome.com/f2d73b4633.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- 網頁內容放這 -->
+  <!-- Nav bar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Movie List</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="favorite.html">Favorite</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <!-- Search bar -->
+    <div class="row">
+      <form class="row row-cols-lg-auto g-3 align-items-center" id="search-form">
+        <div class="col">
+          <label class="visually-hidden" for="inlineFormInputGroupUsername">Search Keyword</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="search-input" placeholder="Keyword...">
+          </div>
+        </div>
+        <div class="col">
+          <button type="submit" class="btn btn-primary" id="search-submit">Search</button>
+        </div>
+        <div class="col offset-md-8">
+          <i class="fa fa-th fa-2x" aria-hidden="true" id="card-view"></i>
+          <i class="fa fa-bars fa-2x" aria-hidden="true" id="list-view"></i>
+        </div>
+      </form>
+    </div>
+
+
+
+    <div class="row" id="data-panel">
+      <!-- Render Movie List -->
+    </div>
+
+    <!-- Pagination -->
+    <nav aria-label="Page navigation">
+      <ul class="pagination justify-content-center" id="paginator">
+        <!-- 由 JavaScript 演算後產生 -->
+      </ul>
+    </nav>
+
+    <!-- Movie Modal -->
+    <div class="modal fade" id="movie-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="movie-modal-title">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="movie-modal-body">
+            <div class="row">
+              <div class="col-sm-8" id="movie-modal-image">
+                <img src="https://webdev.alphacamp.io/posters/c9XxwwhPHdaImA2f1WEfEsbhaFB.jpg" alt="movie-poster"
+                  class="img-fuid">
+              </div>
+              <div class="col-sm-4">
+                <p><em id="movie-modal-date">release date: 2020/01/05</em></p>
+                <p id="movie-modal-description">This is a movie.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 先引用axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <!-- Bootstrap的JS檔 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <!-- 自己的JS放這 -->
+  <script src="./index.js"></script>
+</body>
+
+</html>
